@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Clock and Watch</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js"></script>
+  <script src="js/watch.js"></script>
+</head>
+
+<body>
+  <!-- 時計枠 -->
+  <div id="clock_frame">
+    <!-- 日付部分 -->
+    <span id="clock_date">-----------</span>
+    <!-- 時刻部分 -->
+    <span id="clock_time">--:--:--</span>
+  </div>
+
+  <div>
+    <span id="watch">00:00:00</span>
+    <span>   
+      <input type="button" id="FlagButton" onclick="clickButton()" value="スタート" />
+      <input type="button" id="StopButton" onclick="stopButton()" value="一時停止" />
+      <input type="button" id="LapButton" onclick="lapButton()" value="LAP" />
+    </span>
+  </div>
+</body>
+
+</html>
