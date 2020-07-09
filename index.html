@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Clock and Watch</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js"></script>
+  <script src="js/watch.js"></script>
+  <script src="js/tableedit.js"></script>
+</head>
+
+
+<body>
+
+  <ul class="topnav">
+    <li><a class="active"
+        onClick="popup_modeless('./index.html')">Popup</a>
+    </li>
+  </ul>
+
+  <!--モードレスでオープン
+  <button onClick="popup_modeless('file:///C:/Programs/HTML/%E4%BD%9C%E6%88%90%E7%89%A9/MyCandw/index.html')">◆↑</button>-->
+
+  <!-- 時計枠 -->
+  <div id="clock_frame">
+    <!-- 日付部分 -->
+    <div id="clock_date">-----------</div>
+    <!-- 時刻部分 -->
+    <div id="clock_time">--:--</div>
+  </div>
+
+  <div id="watch_frame">
+    <span id="watch">00:00:00</span>
+    <span id="lapwatch">00:00:00</span>
+    <span id="panel">
+      <input type="button" id="FlagButton" onclick="clickButton()" value="▶" />
+      <input type="button" id="StopButton" onclick="stopButton()" value="CLEAR" />
+    </span>
+  </div>
+
+  <p>
+    　
+    　
+    　
+    　
+    　
+  </p>
+
+  <div id="record_frame">
+    <form id="InputForm">
+      <input type="button" id="LapButton" onclick="appendToTable()" value="LAPED" />
+      <input type="button" id="ResetButton" onclick="resetTable()" value="AC" />
+      <span class="cp_iptxt">
+        <label class="ef">
+        <input id="workComment" type="text" placeholder="Write down work description">
+        </label>
+      </span>
+      <!--<textarea name="workComment"></textarea>-->
+    </form>
+
+    <div id="table_frame">
+      <table id="LapTable">
+        <tr>
+          <th id="tableCount" width="20">Count</th>
+          <th id="tableName">Time</th>
+          <th id="tableArea">Elasped</th>
+          <th id="tableAge">Progress</th>
+          <th id="tableComent">Content</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>
