@@ -1,96 +1,222 @@
 /* Google Webフォントを利用設定するCSSをインポート */
 @import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
 
-/* body要素(全体) */
 body {
-    /* 文字色を黒に */
-    color: black;
-    /* 背景色を灰色にに */
-    background-color: gainsboro;
+  color: black;
+  background-color: gainsboro;
+  font-family: 'Roboto Mono', monospace;
 }
 
-/* id="clock_frame" のdiv要素 */
+div {
+  width: 95%;
+}
+
 div#clock_frame {
-    /* 横幅を親要素であるbodyの100%(同じ幅)にする */
-    width: 100%;
+  width: 95%;
+  padding-right: 0.2em;
+  text-align: right;
 }
 
-/* span要素のデフォルト */
-span {
-    /* 本来はインライン要素であるspanをブロック要素として扱う */
-    display: block;
-    /* ここでは親要素であるdivの内部で右に寄せて配置させる */
-    float: right;
-    /* 横幅を親要素であるdivの85%にする */
-    width: 85%;
-    /* フォントの種類を一番上で指定したGoogle Webフォントに設定する */
-    font-family: 'MuseoModerno', cursive;
+div#clock_date {
+  text-align: right;
+  font-size: 2em;
+  display: inline;
 }
 
-/* id="clock_date" のspan要素 */
-span#clock_date {
-    /* この要素の中におけるテキストを右詰めにする デフォルト値のtext-align:leftを上書き */
-    text-align: right;
-    /* フォントの大きさを親要素であるdivで設定されたサイズ(px)の0.5倍にする */
-    font-size: 0.5em;
-    /* 右のパディングの幅を親要素であるdivで設定されたフォントサイズ(px)の0.5倍にする */
-    padding-right: 0.5em;
+div#clock_time {
+  text-align: right;
+  font-size: 2em;
+  display: inline;
 }
 
-/* id="clock_time" のspan要素 */
-span#clock_time {
-    /* フォントの大きさを親要素であるdivで設定されたサイズ(px)の2倍にする */
-    font-size: 2em;
+
+div#watch_frame {
+  width: 95%;
+  padding-right: 0.3em;
+  text-align: right;
+  float: right;
 }
 
-/* id="clock_time" のspan要素 */
+div#table_frame {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
+
+div#record_frame {
+  display: block;
+  margin-top: 10px;
+  padding-top: 100px;
+}
+
 span#watch {
-    /* この要素の中におけるテキストを右詰めにする デフォルト値のtext-align:leftを上書き */
-    text-align: right;
-    /* フォントの大きさを親要素であるdivで設定されたサイズ(px)の2倍にする */
-    font-size: 2em;
+  font-size: 4em;
+  color: rgba(255, 0, 0, 0.705);
 }
 
-input {
-    background: #ef454a;
-    float: right;
-    color: ghostwhite;
-    text-align: center;
-    width: 100px;
-    height: 50px;
-    cursor: pointer;
-    user-select: none;
-    font-weight: bold;
-
-    /*
-    border-radius: 50%;
-    box-shadow: 0 0 0 #d1483e;
-    margin: 30px auto;
-    font-size: 15px;
-    line-height: 200px;
-   */
+span#lapwatch {
+  font-size: 2em;
+  color: goldenrod;
 }
 
-input#LapButton{
-    background: burlywood;
-    float: right;
-    color: ghostwhite;
-  
-    
-    /*
-    border-radius: 50%;
-    box-shadow: 0 0 0 #d1483e;
-    margin: 30px auto;
-    font-size: 15px;
-    line-height: 200px;
-   */
+input[type="button"] {
+  width: 100px;
+  height: 50px;
+  background: #05aa73;
+  color: ghostwhite;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 5px;
+  user-select: none;
+  border-radius: 100vh;
+}
+
+input#StopButton {
+  background: none;
+  color : #ff8a8e;
+  border: 1px solid;
+  border-color:#ff8a8e;;
+}
+
+
+input#LapButton {
+  background: burlywood;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: .4s;
+  float: left;
+}
+
+input#ResetButton {
+  background: none;
+  border: 1px solid;
+  border-color:black;
+  color: black;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: .4s;
+  border-radius: 10vh;
+  float: left;
 }
 
 input:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
-input:active {
-    /*box-shadow: 0 5px 0  #d1483e;*/
-    /*margin-top: 31px;*/
+form {
+  float: left;
+  font-family: 'MuseoModerno', cursive;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+textarea {
+  outline: none;
+  border: 1px solid #aaa;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+
+  resize: none;
+
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table tr {
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
+}
+
+table tr:hover {
+  background-color: #d4f0fd;
+}
+
+table th,
+table td {
+  text-align: center;
+  width: 15%;
+  padding: 15px 0;
+}
+
+td#tableAge {
+  color: rgba(255, 0, 0, 0.705);
+  ;
+}
+
+ul.topnav {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: #1b2538;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+  display: block;
+  padding: 14px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #a9bce2;
+}
+
+ul.topnav li a.active {
+  background-color: #da3c41;
+}
+
+ul.topnav li.right {
+  float: right;
+}
+
+@media screen and (max-width: 480px) {
+  ul.topnav li.right,
+  ul.topnav li {
+    float: none;
+  }
+}
+.cp_iptxt {
+	position: relative;
+  top: 25px;
+  margin-left: 10px;
+ 
+}
+
+.cp_iptxt input[type='text'] {
+	box-sizing: border-box;
+	width: 60%;
+	padding: 0.3em;
+	transition: 0.3s;
+	letter-spacing: 1px;
+	color: #aaaaaa;
+	border: none;
+	border-bottom: 2px solid #1b2538;
+	background: transparent;
+}
+
+.ef input[type='text']:focus {
+  border-bottom: 2px solid #da3c41;
+  color: black;
+	outline: none;
 }
